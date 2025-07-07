@@ -149,14 +149,17 @@ const Inventory = () => {
   ];
   return (
     <>
-      <div className="p-[40px]  bg-white gap-[40px] flex flex-col">
+      <div className="  bg-white gap-[40px] flex flex-col">
         {/* --------------------------------------------- Section 01 --------------------------------------------- */}
-        <div className="flex items-center justify-between">
-          <span className="text-[24px] font-semibold"> Manage Inventory</span>
-          <div className="text-[14px] text-zinc-500 flex items-center gap-2">
-            Here's analytic from :
-            <Select className="">
-              <SelectTrigger className="w-[141px] h-[40px] text-[16px] rounded-[24px] px-[16px] py-[8px] border-[2px] border-[#FF4D6D] ">
+        <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4">
+          <span className="text-[20px] md:text-[24px] font-semibold">
+            Manage Inventory
+          </span>
+
+          <div className="text-[14px] text-zinc-500 flex flex-col sm:flex-row sm:items-center gap-2">
+            <span>Here's analytic from:</span>
+            <Select>
+              <SelectTrigger className="w-full sm:w-[141px] h-[40px] text-[16px] rounded-[24px] px-[16px] py-[8px] border-[2px] border-[#FF4D6D]">
                 <SelectValue placeholder="Theme" />
               </SelectTrigger>
               <SelectContent>
@@ -164,19 +167,19 @@ const Inventory = () => {
                 <SelectItem value="dark">Dark</SelectItem>
                 <SelectItem value="system">System</SelectItem>
               </SelectContent>
-            </Select>{" "}
+            </Select>
           </div>
         </div>
+
         {/* --------------------------------------------- Section 02 --------------------------------------------- */}
-        <div className="flex gap-[20px]">
-          <div className="w-[33%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
+        <div className="flex flex-wrap gap-[20px]">
+          <div className="w-full sm:w-[48%] lg:w-[32%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
             <div className="flex items-center justify-between">
               <span className="text-[20px] text-black font-semibold">
                 Total Items
               </span>
             </div>
-
-            <div className="flex  justify-between items-end">
+            <div className="flex justify-between items-end">
               <span className="text-[32px] text-black font-bold">239</span>
               <div className="flex flex-col gap-[8px] items-end">
                 <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#A0E7E5] rounded-[4px] w-fit">
@@ -188,15 +191,15 @@ const Inventory = () => {
               </div>
             </div>
           </div>
-          <div className="w-[33%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
+
+          <div className="w-full sm:w-[48%] lg:w-[32%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
             <div className="flex items-center justify-between">
               <span className="text-[20px] text-black font-semibold">
                 Low Stock Item
               </span>
               <ArrowUpRight size={24} color="#FF4D6D" />
             </div>
-
-            <div className="flex  justify-between items-end">
+            <div className="flex justify-between items-end">
               <span className="text-[32px] text-black font-bold">8</span>
               <div className="flex flex-col gap-[8px] items-end">
                 <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#FFD1DC] rounded-[4px] w-fit">
@@ -208,15 +211,15 @@ const Inventory = () => {
               </div>
             </div>
           </div>
-          <div className="w-[33%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
+
+          <div className="w-full sm:w-[48%] lg:w-[32%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
             <div className="flex items-center justify-between">
               <span className="text-[20px] text-black font-semibold">
                 Out of Stock
               </span>
               <ArrowUpRight size={24} color="#FF4D6D" />
             </div>
-
-            <div className="flex  justify-between items-end">
+            <div className="flex justify-between items-end">
               <span className="text-[32px] text-black font-bold">4</span>
               <div className="flex flex-col gap-[8px] items-end">
                 <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#FFD1DC] rounded-[4px] w-fit">
@@ -228,89 +231,68 @@ const Inventory = () => {
               </div>
             </div>
           </div>
-          {/* <div className="w-[33%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col justify-between gap-[24px]">
-                         <div className="flex items-center justify-between">
-                           <span className="text-[20px] text-black font-semibold">
-                             New Order Notification
-                           </span>
-                         </div>
-           
-                         <div className="flex h-fit justify-between items-end">
-                           <div className="flex items-center space-x-2">
-                             <Switch
-                               id="airplane-mode"
-                               checked={enabled}
-                               onCheckedChange={setEnabled}
-                               className="bg-[#FF4D6D]  data-[state=checked]:bg-[#FF4D6D] peer"
-                             />
-                             <span className="text-[16px]">Notify me through email</span>
-                           </div>
-                           {/* <span className="text-[32px] text-black font-bold">
-                            734
-                           </span>
-                           <div className="flex flex-col gap-[8px] items-end">
-                             <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#FFD1DC] rounded-[4px] w-fit">
-                               -2%
-                             </div>
-                             <span className="text-[14px] text-zinc-500">
-                               From Last Week
-                             </span>
-                           </div> 
-                         </div>
-                       </div> */}
         </div>
+
         {/* --------------------------------------------- Section 03 --------------------------------------------- */}
 
-        <div className=" flex justify-between">
-          <div className="flex gap-[20px]">
-            <div className="gap-[10px] rounded-full border border-slate-300 w-[290px]  items-center flex px-[16px] py-[8px]">
-              <Search size={20} color="#878787" />{" "}
+        <div className="flex flex-col gap-[16px] sm:flex-row sm:items-center sm:justify-between">
+          {/* Left: Search & Filter */}
+          <div className="flex flex-col gap-[12px] sm:flex-row sm:gap-[20px]">
+            {/* Search */}
+            <div className="flex items-center gap-[10px] rounded-full border border-slate-300 w-full sm:w-[290px] px-[16px] py-[8px]">
+              <Search size={20} color="#878787" />
               <span className="text-[16px] text-[#878787]">Search Product</span>
             </div>
-            <div className="gap-[10px] rounded-full border border-slate-300 w-fit flex px-[16px] py-[8px]">
-              <Funnel size={20} color="#878787" />{" "}
+            {/* Filter */}
+            <div className="flex items-center gap-[10px] rounded-full border border-slate-300 w-full sm:w-fit px-[16px] py-[8px]">
+              <Funnel size={20} color="#878787" />
               <span className="text-[16px] text-[#878787]">Filter</span>
             </div>
           </div>
-          <div className="flex gap-[20px] items-center">
-            {/* <div className="gap-[10px] rounded-full border border-slate-300 w-fit flex px-[16px] py-[8px]">
-                <Plus size={20} color="#878787" />{" "}
-                <span className="text-[16px] text-[#878787]">Add New Item</span>
-              </div> */}
-            <Link to="/inventory">
-              <div className="gap-[10px] rounded-full border border-slate-300 w-fit flex px-[16px] py-[8px] bg-[#FF4D6D] items-center">
-                <Plus size={20} color="#FFFFFF" />{" "}
+
+          {/* Right: Add New Item */}
+          <div className="flex justify-end">
+            <Link to="/inventory" className="w-full sm:w-fit">
+              <div className="flex items-center justify-center gap-[10px] rounded-full border border-slate-300 bg-[#FF4D6D] w-full sm:w-fit px-[16px] py-[8px]">
+                <Plus size={20} color="#FFFFFF" />
                 <span className="text-[16px] text-[#FFFFFF]">Add New Item</span>
               </div>
             </Link>
           </div>
         </div>
+
         {/* --------------------------------------------- Section 04 --------------------------------------------- */}
-        <div className="overflow-x-auto bg-white  ">
-          <Table>
+        <div className="overflow-x-auto bg-white">
+          <Table className="min-w-[800px]">
             <TableHeader>
               <TableRow className="bg-[#F7F7F7]">
-                <TableHead className="w-[5%] p-[30px]">
+                <TableHead className="w-[5%] p-[16px]">
                   <Checkbox id="terms-2" className="bg-white" />
                 </TableHead>
-                <TableHead className="w-[40%] text-[#878787] text-[16px] font-light pl-[30px]">
+
+                <TableHead className="w-[40%] text-[#878787] text-[16px] font-light pl-[16px]">
                   Product Name
                 </TableHead>
-                <TableHead className="w-[20%] text-[#878787] text-[16px] font-light">
+
+                <TableHead className="w-[20%] text-[#878787] text-[16px] font-light ">
                   Categories
                 </TableHead>
-                <TableHead className="w-[10%] text-[#878787] text-[16px] font-light">
+
+                <TableHead className="w-[10%] text-[#878787] text-[16px] font-light ">
                   SKU
                 </TableHead>
-                <TableHead className="w-[10%] text-[#878787] text-[16px] font-light">
+
+                <TableHead className="w-[10%] text-[#878787] text-[16px] font-light ">
                   Price
                 </TableHead>
-                <TableHead className="w-[13%] text-[#878787] text-[16px] font-light">
+
+                <TableHead className="w-[13%] text-[#878787] text-[16px] font-light ">
                   <div className="flex items-center gap-2">
                     Stock <ArrowDown size={20} color="#ff4d6d" />
                   </div>
                 </TableHead>
-                <TableHead className="w-[15%] text-[#878787] text-[16px] font-light pr-[60px]">
+
+                <TableHead className="w-[15%] text-[#878787] text-[16px] font-light pr-[30px]">
                   Action
                 </TableHead>
               </TableRow>
@@ -319,37 +301,39 @@ const Inventory = () => {
             <TableBody>
               {products.map((product) => (
                 <TableRow key={product.id} className="border-0">
-                  <TableCell className="w-[5%] pl-[30px] py-4">
+                  <TableCell className="w-[5%] pl-[16px] py-3">
                     <Checkbox
                       id={`checkbox-${product.id}`}
                       className="bg-white"
                     />
                   </TableCell>
 
-                  <TableCell className="w-[35%] px-0 py-4">
-                    <div className="flex items-center gap-4 pl-[30px]">
+                  <TableCell className="w-[40%] py-3">
+                    <div className="flex items-center gap-3 pl-[16px]">
                       <img
                         src={product.image}
                         alt={product.name}
                         className="w-10 h-10 rounded object-cover"
                       />
-                      <span>{product.name}</span>
+                      <span className="truncate max-w-[120px] sm:max-w-full">
+                        {product.name}
+                      </span>
                     </div>
                   </TableCell>
 
-                  <TableCell className="w-[12%] px-0 py-4 text-[#444]">
+                  <TableCell className="w-[20%] px-0 py-3 text-[#444] ">
                     {product.category}
                   </TableCell>
 
-                  <TableCell className="w-[10%] px-0 py-4 text-[#444]">
+                  <TableCell className="w-[10%] px-0 py-3 text-[#444] ">
                     {product.sku}
                   </TableCell>
 
-                  <TableCell className="w-[10%] px-0 py-4 text-[#444]">
+                  <TableCell className="w-[10%] px-0 py-3 text-[#444] ">
                     {product.price}
                   </TableCell>
 
-                  <TableCell className="w-[13%] px-0 py-4">
+                  <TableCell className="w-[13%] px-0 py-3 ">
                     <div className="flex items-center gap-2">
                       <span>{product.stock} item</span>
                       {product.stock < 10 && (
@@ -358,7 +342,7 @@ const Inventory = () => {
                     </div>
                   </TableCell>
 
-                  <TableCell className="w-[15%] pr-[30px] py-4">
+                  <TableCell className="w-[15%] pr-[16px] py-3">
                     <div className="flex items-center gap-3 justify-start">
                       <SquarePen className="w-4 h-4 cursor-pointer" />
                       <Trash2 className="text-red-500 w-4 h-4 cursor-pointer" />
@@ -371,61 +355,68 @@ const Inventory = () => {
         </div>
 
         {/* --------------------------------------------- Section 05 --------------------------------------------- */}
-        <div className="w-full flex justify-between">
-          <span className="text-[18px] font-thin">
+        <div className="w-full flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
+          <span className="text-[16px] md:text-[18px] font-thin">
             Showing 1 to 10 of 239 results
-          </span>{" "}
-          <div className="max-w-1/2">
+          </span>
+
+          <div className="w-full md:w-auto overflow-x-auto">
             <Pagination>
-              <PaginationContent className="flex items-center gap-[12px]">
+              <PaginationContent className="flex items-center gap-[8px]">
                 <PaginationItem>
                   <button
-                    className="rounded-md border border-gray-200 bg-white px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-gray-400"
+                    className="rounded-md border border-gray-200 bg-white w-[40px] h-[40px] flex justify-center items-center text-gray-400"
                     disabled>
-                    <ChevronsLeft strokeWidth={1} size={24} />
+                    <ChevronsLeft strokeWidth={1} size={20} />
                   </button>
                 </PaginationItem>
+
                 <PaginationItem>
                   <button
-                    className="rounded-md border border-gray-200 bg-white px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-gray-400"
+                    className="rounded-md border border-gray-200 bg-white w-[40px] h-[40px] flex justify-center items-center text-gray-400"
                     disabled>
-                    <ChevronLeft strokeWidth={1} size={24} />
+                    <ChevronLeft strokeWidth={1} size={20} />
                   </button>
                 </PaginationItem>
+
                 <PaginationItem>
                   <PaginationLink
                     href="#"
                     isActive
-                    className="bg-[#FF4D6D] rounded-md border border-gray-200 px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-white">
+                    className="bg-[#FF4D6D] rounded-md border border-gray-200 w-[40px] h-[40px] flex justify-center items-center text-white">
                     1
                   </PaginationLink>
                 </PaginationItem>
+
                 <PaginationItem>
                   <PaginationLink
                     href="#"
-                    className="rounded-md border border-gray-200 bg-white px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-black">
+                    className="rounded-md border border-gray-200 bg-white w-[40px] h-[40px] flex justify-center items-center text-black">
                     2
                   </PaginationLink>
                 </PaginationItem>
+
                 <PaginationItem>
                   <PaginationLink
                     href="#"
-                    className="rounded-md border border-gray-200 bg-white px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-black">
+                    className="rounded-md border border-gray-200 bg-white w-[40px] h-[40px] flex justify-center items-center text-black">
                     3
                   </PaginationLink>
                 </PaginationItem>
+
                 <PaginationItem>
                   <button
-                    className="rounded-md border border-gray-200 bg-white px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-black"
+                    className="rounded-md border border-gray-200 bg-white w-[40px] h-[40px] flex justify-center items-center text-black"
                     disabled>
-                    <ChevronRight strokeWidth={1.5} size={24} />
+                    <ChevronRight strokeWidth={1.5} size={20} />
                   </button>
                 </PaginationItem>
+
                 <PaginationItem>
                   <button
-                    className="rounded-md border border-gray-200 bg-white px-2 py-1 w-[44px] h-[44px] flex justify-center items-center text-black"
+                    className="rounded-md border border-gray-200 bg-white w-[40px] h-[40px] flex justify-center items-center text-black"
                     disabled>
-                    <ChevronsRight strokeWidth={1.5} size={24} />
+                    <ChevronsRight strokeWidth={1.5} size={20} />
                   </button>
                 </PaginationItem>
               </PaginationContent>

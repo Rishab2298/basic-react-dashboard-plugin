@@ -18,19 +18,22 @@ import { useEffect } from "react";
 export default function App() {
   return (
     <HashRouter>
-      <div className="p-6 space-y-6">
+<div className="sm:p-[40px] p-[15px]">
         {/* Navigation */}
-        <div className="flex gap-4">
-          <Link to="/">
-            <Button>Dashboard</Button>
-          </Link>
-          <Link to="/shipping">
-            <Button>Shipping</Button>
-          </Link>
-          <Link to="/inventory">
-            <Button>Inventory</Button>
-          </Link>
-        </div>
+     <div className="w-full overflow-x-auto">
+  <div className="flex w-fit gap-4 pb-3 ">
+    <Link to="/">
+      <Button className="whitespace-nowrap">Dashboard</Button>
+    </Link>
+    <Link to="/shipping">
+      <Button className="whitespace-nowrap">Shipping</Button>
+    </Link>
+    <Link to="/inventory">
+      <Button className="whitespace-nowrap">Inventory</Button>
+    </Link>
+  </div>
+</div>
+
 
         {/* Routes */}
         <Routes>

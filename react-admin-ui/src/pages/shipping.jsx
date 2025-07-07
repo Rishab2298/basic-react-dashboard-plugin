@@ -159,260 +159,184 @@ const Shipping = () => {
   ];
 
   return (
-    <div className="p-[40px]  bg-white gap-[40px] flex flex-col">
+    <div className="  bg-white gap-[40px] flex flex-col">
       {/* --------------------------------------------- Section 01 --------------------------------------------- */}
-      <div className="flex items-center justify-between">
-        <span className="text-[24px] font-semibold"> Manage Shipping</span>
-        <div className="text-[14px] text-zinc-500 flex items-center gap-2">
-          Here's analytic from :
-          <Select className="">
-            <SelectTrigger className="w-[141px] h-[40px] text-[16px] rounded-[24px] px-[16px] py-[8px] border-[2px] border-[#FF4D6D] ">
-              <SelectValue placeholder="Today" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectItem value="light">Light</SelectItem>
-              <SelectItem value="dark">Dark</SelectItem>
-              <SelectItem value="system">System</SelectItem>
-            </SelectContent>
-          </Select>{" "}
-        </div>
-      </div>
+     <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-4 md:gap-0">
+  <span className="text-[20px] md:text-[24px] font-semibold">
+    Manage Shipping
+  </span>
+  
+  <div className="text-[14px] text-zinc-500 flex flex-col sm:flex-row sm:items-center gap-2">
+    <span>Here's analytic from :</span>
+    <Select>
+      <SelectTrigger className="w-full sm:w-[141px] h-[40px] text-[16px] rounded-[24px] px-[16px] py-[8px] border-[2px] border-[#FF4D6D]">
+        <SelectValue placeholder="Today" />
+      </SelectTrigger>
+      <SelectContent>
+        <SelectItem value="light">Light</SelectItem>
+        <SelectItem value="dark">Dark</SelectItem>
+        <SelectItem value="system">System</SelectItem>
+      </SelectContent>
+    </Select>
+  </div>
+</div>
+
       {/* --------------------------------------------- Section 02 --------------------------------------------- */}
-      <div className="flex gap-[20px]">
-        <div className="w-[25%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
-          <div className="flex items-center justify-between">
-            <span className="text-[20px] text-black font-semibold">
-              Pending Shipment
-            </span>
-            <ArrowUpRight size={24} color="#FF4D6D" />
-          </div>
-
-          <div className="flex  justify-between items-end">
-            <span className="text-[32px] text-black font-bold">30</span>
-            {/* <div className="flex flex-col gap-[8px] items-end">
-              <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#A0E7E5] rounded-[4px] w-fit">
-                +10
-              </div>
-              <span className="text-[14px] text-zinc-500">From Last Week</span>
-            </div> */}
-          </div>
-        </div>
-        <div className="w-[25%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
-          <div className="flex items-center justify-between">
-            <span className="text-[20px] text-black font-semibold">
-              Waiting Pickup
-            </span>
-            <ArrowUpRight size={24} color="#FF4D6D" />
-          </div>
-
-          <div className="flex  justify-between items-end">
-            <span className="text-[32px] text-black font-bold">5</span>
-            {/* <div className="flex flex-col gap-[8px] items-end">
-              <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#FFD1DC] rounded-[4px] w-fit">
-                +3
-              </div>
-              <span className="text-[14px] text-zinc-500">From Last Week</span>
-            </div> */}
-          </div>
-        </div>
-        <div className="w-[25%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
-          <div className="flex items-center justify-between">
-            <span className="text-[20px] text-black font-semibold">
-              Shipped
-            </span>
-            <ArrowUpRight size={24} color="#FF4D6D" />
-          </div>
-
-          <div className="flex  justify-between items-end">
-            <span className="text-[32px] text-black font-bold">3</span>
-            {/* <div className="flex flex-col gap-[8px] items-end">
-              <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#FFD1DC] rounded-[4px] w-fit">
-                +4
-              </div>
-              <span className="text-[14px] text-zinc-500">From Last Week</span>
-            </div> */}
-          </div>
-        </div>
-        <div className="w-[25%] rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]">
-          <div className="flex items-center justify-between">
-            <span className="text-[20px] text-black font-semibold">
-              Delivered
-            </span>
-            <ArrowUpRight size={24} color="#FF4D6D" />
-          </div>
-
-          <div className="flex  justify-between items-end">
-            <span className="text-[32px] text-black font-bold">1</span>
-            {/* <div className="flex flex-col gap-[8px] items-end">
-              <div className="text-[14px] px-[8px] py-[4px] text-black bg-[#FFD1DC] rounded-[4px] w-fit">
-                +4
-              </div>
-              <span className="text-[14px] text-zinc-500">From Last Week</span>
-            </div> */}
-          </div>
-        </div>
+    <div className="flex flex-wrap gap-[20px]">
+  {[
+    { title: "Pending Shipment", value: 30 },
+    { title: "Waiting Pickup", value: 5 },
+    { title: "Shipped", value: 3 },
+    { title: "Delivered", value: 1 },
+  ].map((item, index) => (
+    <div
+      key={index}
+      className="w-full min-w-[250px] md:w-[48%] lg:w-[23%] flex-1 rounded-[8px] border border-[#E3E3E3] p-[24px] flex flex-col gap-[24px]"
+    >
+      <div className="flex items-center justify-between">
+        <span className="text-[20px] text-black font-semibold">
+          {item.title}
+        </span>
+        <ArrowUpRight size={24} color="#FF4D6D" />
       </div>
+
+      <div className="flex justify-between items-end">
+        <span className="text-[32px] text-black font-bold">{item.value}</span>
+      </div>
+    </div>
+  ))}
+</div>
+
       {/* --------------------------------------------- Section 03 --------------------------------------------- */}
 
-      <div className=" flex justify-between">
-        <div className="flex gap-[20px]">
-          <div className="gap-[10px] rounded-full border border-slate-300 w-[290px]  items-center flex px-[16px] py-[8px]">
-            <Search size={20} color="#878787" />{" "}
-            <span className="text-[16px] text-[#878787]">Search Product</span>
-          </div>
-          <div className="gap-[10px] rounded-full border border-slate-300 w-fit flex px-[16px] py-[8px]">
-            <Funnel size={20} color="#878787" />{" "}
-            <span className="text-[16px] text-[#878787]">Filter</span>
-          </div>
-        </div>
-        <div className="flex gap-[20px] items-center">
-          <Link to="/inventory">
-            <div className="gap-[10px] rounded-full border border-[#878787] w-fit flex px-[16px] py-[8px]  items-center">
-              <Download size={24} color="#878787" />{" "}
-              <span className="text-[16px] text-[#878787]">Export CSV</span>
-            </div>
-          </Link>
-        </div>
+    <div className="flex flex-col sm:flex-row sm:justify-between gap-[16px] sm:gap-0 w-full">
+  {/* Left Section: Search + Filter */}
+  <div className="flex flex-col sm:flex-row gap-[12px] sm:gap-[20px]">
+    {/* Search Bar */}
+    <div className="flex items-center gap-[10px] rounded-full border border-slate-300 px-[16px] py-[8px] w-full sm:w-[290px]">
+      <Search size={20} color="#878787" />
+      <span className="text-[16px] text-[#878787]">Search Product</span>
+    </div>
+
+    {/* Filter Button */}
+    <div className="flex items-center gap-[10px] rounded-full border border-slate-300 px-[16px] py-[8px] w-fit">
+      <Funnel size={20} color="#878787" />
+      <span className="text-[16px] text-[#878787]">Filter</span>
+    </div>
+  </div>
+
+  {/* Right Section: Export Button */}
+  <div className="flex justify-start sm:justify-end">
+    <Link to="/inventory">
+      <div className="flex items-center gap-[10px] rounded-full border border-[#878787] px-[16px] py-[8px] w-fit">
+        <Download size={24} color="#878787" />
+        <span className="text-[16px] text-[#878787]">Export CSV</span>
       </div>
+    </Link>
+  </div>
+</div>
+
 
       {/* --------------------------------------------- Section 04 --------------------------------------------- */}
-      <div className="overflow-x-auto bg-white">
-        <div className="min-w-max">
-          <Table>
-            <TableHeader>
-              <TableRow className="bg-[#F7F7F7] font-light px-[8px] py-[12px] gap-[16px]">
-                <TableHead className="w-[100px] px-[30px]">
-                  <Checkbox id="terms-2" className="bg-white" />
-                </TableHead>
-                <TableHead className="w-[200px] text-[#878787] text-[16px] font-light whitespace-nowrap">
-                  Order Number
-                </TableHead>
-                <TableHead className="w-[200px] text-[#878787] text-[16px] font-light whitespace-nowrap">
-                  <div className="flex gap-2 items-center">
-                    Date <ArrowDown size={20} color="#ff4d6d" />
-                  </div>
-                </TableHead>
-                <TableHead className="w-[400px] text-[#878787] text-[16px] font-light whitespace-nowrap">
-                  Item
-                </TableHead>
-                <TableHead className="w-[200px] text-[#878787] text-[16px] font-light whitespace-nowrap">
-                  Address
-                </TableHead>
-                <TableHead className="w-[200px] text-[#878787] text-[16px] font-light whitespace-nowrap">
-                  <div className="flex gap-2 items-center">
-                    Shipment Status <ArrowDown size={20} color="#ff4d6d" />
-                  </div>
-                </TableHead>
-                <TableHead className="w-[300px] text-[#878787] text-[16px] font-light whitespace-nowrap">
-                  <div className="flex justify-center items-center w-full">
-                    Action
-                  </div>
-                </TableHead>
-              </TableRow>
-            </TableHeader>
+  <div className="w-full overflow-x-auto bg-white">
+  <div className="w-max min-w-full">
+    <Table>
+      <TableHeader>
+        <TableRow className="bg-[#F7F7F7] text-sm sm:text-base">
+          <TableHead className="w-[80px] px-4 sm:px-6">
+            <Checkbox id="terms-2" className="bg-white" />
+          </TableHead>
+          <TableHead className="min-w-[150px] text-[#878787] font-light whitespace-nowrap">
+            Order Number
+          </TableHead>
+          <TableHead className="min-w-[150px] text-[#878787] font-light whitespace-nowrap">
+            <div className="flex gap-1 items-center">
+              Date <ArrowDown size={16} color="#ff4d6d" />
+            </div>
+          </TableHead>
+          <TableHead className="min-w-[300px] text-[#878787] font-light whitespace-nowrap">
+            Item
+          </TableHead>
+          <TableHead className="min-w-[200px] text-[#878787] font-light whitespace-nowrap hidden lg:table-cell">
+            Address
+          </TableHead>
+          <TableHead className="min-w-[180px] text-[#878787] font-light whitespace-nowrap">
+            <div className="flex gap-1 items-center">
+              Shipment Status <ArrowDown size={16} color="#ff4d6d" />
+            </div>
+          </TableHead>
+          <TableHead className="min-w-[180px] text-[#878787] font-light text-center whitespace-nowrap">
+            Action
+          </TableHead>
+        </TableRow>
+      </TableHeader>
 
-            <TableBody>
-              {orders.map((order) => (
-                <TableRow className="border-0 py-3 h-[0px]" key={order.id}>
-                  <TableCell className="px-[30px]">
-                    <Checkbox id="terms-2" className="bg-white" />
-                  </TableCell>
-                  <TableCell>{order.ordernumber}</TableCell>
-                  <TableCell>{order.date}</TableCell>
-                  <TableCell>
-                    <div className="flex gap-4 items-center">
-                      <img
-                        src={order.image}
-                        alt={order.item}
-                        className="w-10 h-10 rounded object-cover"
-                      />
-                      {order.item}
-                    </div>
-                  </TableCell>
-                  <TableCell>{order.address}</TableCell>
-                  <TableCell className="align-middle text-center">
-                    <div className="inline-flex justify-center items-center w-full">
-                      {order.shipmentStatus === "pending" ? (
-                        <span className="px-3 py-1 rounded-md text-sm font-thin bg-[#FFD1DC] text-black">
-                          Pending
-                        </span>
-                      ) : order.shipmentStatus === "waiting" ? (
-                        <span className="px-3 py-1 rounded-md text-sm font-thin bg-[#FFD1DC] text-black">
-                          Waiting Pickup
-                        </span>
-                      ) : order.shipmentStatus === "picked" ? (
-                        <span className="px-3 py-1 rounded-md text-sm font-thin bg-[#A0E7E5] text-black">
-                          Picked
-                        </span>
-                      ) : order.shipmentStatus === "shipped" ? (
-                        <span className="px-3 py-1 rounded-md text-sm font-thin bg-[#FFD1DC] text-black">
-                          Shipped
-                        </span>
-                      ) : order.shipmentStatus === "delivered" ? (
-                        <span className="px-3 py-1 rounded-md text-sm font-thin bg-[#A0E7E5] text-black">
-                          Delivered
-                        </span>
-                      ) : (
-                        <span className="px-3 py-1 rounded-md text-sm font-thin bg-[#FFD1DC] text-black">
-                          {order.shipmentStatus}
-                        </span>
-                      )}
-                    </div>
-                  </TableCell>
-                  <TableCell className="align-middle text-right">
-                    <div className="inline-flex justify-end items-center w-full">
-                      {order.shipmentStatus === "pending" ? (
-                        <div className="">
-                          <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                            Edit
-                          </span>
-                          <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                            Mark Shipped
-                          </span>
-                        </div>
-                      ) : order.shipmentStatus === "waiting" ? (
-                        <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                          Send Reminder
-                        </span>
-                      ) : order.shipmentStatus === "picked" ? (
-                        <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                          Mark Recieved
-                        </span>
-                      ) : order.shipmentStatus === "shipped" ? (
-                        <div className="">
-                          <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                            Track
-                          </span>
-                          <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                            Label
-                          </span>
-                        </div>
-                      ) : order.shipmentStatus === "delivered" ? (
-                        <div className="">
-                          <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                            View
-                          </span>
-                        </div>
-                      ) : (
-                        <span className="px-3 py-1  text-sm font-medium text-[#FF4D6D]">
-                          {order.shipmentStatus}
-                        </span>
-                      )}
-                    </div>
-                  </TableCell>
-                </TableRow>
-              ))}
-            </TableBody>
-          </Table>
-        </div>
-      </div>
+      <TableBody>
+        {orders.map((order) => (
+          <TableRow key={order.id} className="h-[70px] border-0 text-sm sm:text-base">
+            <TableCell className="px-4 sm:px-6">
+              <Checkbox id="terms-2" className="bg-white" />
+            </TableCell>
+            <TableCell>{order.ordernumber}</TableCell>
+            <TableCell>{order.date}</TableCell>
+            <TableCell>
+              <div className="flex gap-2 items-center">
+                <img
+                  src={order.image}
+                  alt={order.item}
+                  className="w-8 h-8 sm:w-10 sm:h-10 rounded object-cover"
+                />
+                <span className="truncate max-w-[120px] sm:max-w-none">{order.item}</span>
+              </div>
+            </TableCell>
+            <TableCell className="hidden lg:table-cell">
+              {order.address}
+            </TableCell>
+            <TableCell className="text-center">
+              <span
+                className={`px-3 py-1 rounded-md text-xs sm:text-sm font-thin ${
+                  order.shipmentStatus === "picked" ||
+                  order.shipmentStatus === "delivered"
+                    ? "bg-[#A0E7E5]"
+                    : "bg-[#FFD1DC]"
+                } text-black`}
+              >
+                {order.shipmentStatus === "waiting" ? "Waiting Pickup" : order.shipmentStatus}
+              </span>
+            </TableCell>
+            <TableCell className="text-center">
+              <div className="flex flex-col sm:flex-row justify-center items-center gap-1 text-[#FF4D6D] text-xs sm:text-sm">
+                {order.shipmentStatus === "pending" && (
+                  <>
+                    <span>Edit</span>
+                    <span>Mark Shipped</span>
+                  </>
+                )}
+                {order.shipmentStatus === "waiting" && <span>Send Reminder</span>}
+                {order.shipmentStatus === "picked" && <span>Mark Received</span>}
+                {order.shipmentStatus === "shipped" && (
+                  <>
+                    <span>Track</span>
+                    <span>Label</span>
+                  </>
+                )}
+                {order.shipmentStatus === "delivered" && <span>View</span>}
+              </div>
+            </TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
+  </div>
+</div>
+
 
       {/* --------------------------------------------- Section 05 --------------------------------------------- */}
-      <div className="w-full flex justify-between">
+      <div className="w-full flex md:flex-row flex-col  gap-[20px] md:justify-between">
         <span className="text-[18px] font-thin">
           Showing 1 to 10 of 239 results
         </span>{" "}
-        <div className="max-w-1/2">
+        <div className="">
           <Pagination>
             <PaginationContent className="flex items-center gap-[12px]">
               <PaginationItem>
